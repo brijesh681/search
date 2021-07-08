@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+	Create New Page - Wiki
+{% endblock %}
+{% block body %}
+	{% if available == True %}
+	<div class="alert alert-warning" role="alert">
+		This title already exists. Try a different title.
+	</div>
+	{% endif %}
+	<h1>Create New Page</h1>
+	<p>Please write only Markdown Content to publish.</p>
+	<div style="padding-top:30px;padding-left:10px;">
+		<form action="{% url 'new_page' %}" method="post">
+			{% csrf_token %}
+			<input type="text" class="form-control" name="title" paceholder="title" style="width: 80%" placeholder="Enter title" autocomplete="off" required>
+			<textarea name="content" class="form-control" autocomplete="off" placeholder="Enter content in markdown"
+            rows="20" style="width: 80%;
+                    margin-top:30px;"></textarea>
+
+        <button type="submit" class="btn btn-outline-primary" style="margin-top: 25px;">Submit</button>
+		</form>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+{{title}} - Edit Page Wiki
+{% endblock %}
+{% block body %}
+<div style="padding-top:30px;padding-left:10px;">
+	<form action="{% url 'edit_page' title%}" method="POST">
+		{% csrf_token %}
+		<h1>{{title}}</h1>
+		<h4>Edit the Markdown Content below.</h4>
+		<textarea name="editcontent" class="form-control" autocomplete="off" rows="20" style="width: 80%;margin-top:30px;">{{content}} </textarea>
+        <button type="submit" class="btn btn-outline-primary" style="margin-top: 25px;">Submit</button>
+    </form>
+</div>
+{% endblock %}
