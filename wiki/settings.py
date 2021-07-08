@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%710m*zic)#0u((qugw#1@e^ty!c)9j04956v@ly(_86n$rg)h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True#False
 
 ALLOWED_HOSTS = ['apkibooks.herokuapp.com','localhost']
 
@@ -122,14 +122,19 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
+STATICFILES_ROOT = os.path.join(BASE_DIR, 'static_root')
+CLOUDINARY_STORAGE= { 
+  'CLOUD_NAME' : 'dtcyj6dwu', 
+  'API_KEY' : '268927187694494', 
+  'API_SECRET' : 'HSGFHWFfLB_7WmZXdqTBbZGb_bc' 
+}
+CLOUDINARY = {
+    'max_length': 200,
+}
 
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='login'
