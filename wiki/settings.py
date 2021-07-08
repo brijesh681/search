@@ -122,19 +122,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_ROOT = os.path.join(BASE_DIR, 'static_root')
-CLOUDINARY_STORAGE= { 
-  'CLOUD_NAME' : 'dtcyj6dwu', 
-  'API_KEY' : '268927187694494', 
-  'API_SECRET' : 'HSGFHWFfLB_7WmZXdqTBbZGb_bc' 
-}
-CLOUDINARY = {
-    'max_length': 200,
-}
+
 
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='login'
